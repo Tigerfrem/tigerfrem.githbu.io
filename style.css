@@ -24,7 +24,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     width: 0;
-    animation: typing 1.5s steps(30, end), blink 0.5s step-end infinite alternate;
+    animation: typing 2s steps(30, end), blink 0.5s step-end infinite alternate;
 }
 
 /* Typing effect for #welcome-text (faster speed) */
@@ -48,11 +48,12 @@ body {
     height: auto;
 }
 
-/* Console Text Typing and Vanishing Effect */
+/* Console Text Typing Animation */
 .console p {
     margin: 5px 0;
+    display: inline;
     opacity: 0;
-    animation: fadeIn 2s forwards, fadeOut 1s ease-in 2.5s forwards;
+    animation: fadeIn 2s forwards, disappear 2s 4s forwards;
 }
 
 /* Fade-in effect for console text */
@@ -61,23 +62,10 @@ body {
     100% { opacity: 1; }
 }
 
-/* Fade-out effect for console text */
-@keyframes fadeOut {
+/* Disappear effect for console text */
+@keyframes disappear {
     0% { opacity: 1; }
     100% { opacity: 0; }
-}
-
-/* Delay each paragraph for sequential appearance */
-.console p:nth-child(1) {
-    animation-delay: 1s; /* Delay for "Initializing..." */
-}
-
-.console p:nth-child(2) {
-    animation-delay: 4s; /* Delay for "Loading resources..." */
-}
-
-.console p:nth-child(3) {
-    animation-delay: 7s; /* Delay for "Ready to hack the world!" */
 }
 
 /* Neon Button Styles */
@@ -89,10 +77,31 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInButton 2s 12s forwards;
 }
 
 .neon-button:hover {
     background-color: #0f0;
     color: #000;
     box-shadow: 0 0 15px #0f0, 0 0 30px #0f0;
+}
+
+/* Fade-in animation for the button */
+@keyframes fadeInButton {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Additional typing effects to simulate messages in terminal */
+.console p:nth-child(1) {
+    animation-delay: 2s; /* Delay for "Initializing..." */
+}
+
+.console p:nth-child(2) {
+    animation-delay: 6s; /* Delay for "Loading resources..." */
+}
+
+.console p:nth-child(3) {
+    animation-delay: 10s; /* Delay for "Ready to hack the world!" */
 }
