@@ -52,13 +52,13 @@ body {
 .console p {
     margin: 5px 0;
     opacity: 0;
-    animation: typing 3s steps(30, end) forwards, fadeOut 1s ease-in 3s forwards;
+    animation: fadeIn 2s forwards, fadeOut 1s ease-in 2.5s forwards;
 }
 
-/* Typing effect for console text */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; } /* Full width of the text */
+/* Fade-in effect for console text */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /* Fade-out effect for console text */
