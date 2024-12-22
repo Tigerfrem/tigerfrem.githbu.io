@@ -27,7 +27,7 @@ body {
     animation: typing 2s steps(30, end), blink 0.5s step-end infinite alternate;
 }
 
-/* Typing effect for #welcome-text (faster speed) */
+/* Typing effect for #welcome-text */
 @keyframes typing {
     from { width: 0; }
     to { width: 20ch; } /* Adjust width based on text length */
@@ -53,17 +53,17 @@ body {
     margin: 5px 0;
     display: inline;
     opacity: 0;
-    animation: fadeIn 2s forwards, disappear 2s 4s forwards;
+    animation: typingWord 2s steps(10, end) forwards, fadeOut 2s 4s forwards;
 }
 
-/* Fade-in effect for console text */
-@keyframes fadeIn {
+/* Typing effect for each word in console text */
+@keyframes typingWord {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
 /* Disappear effect for console text */
-@keyframes disappear {
+@keyframes fadeOut {
     0% { opacity: 1; }
     100% { opacity: 0; }
 }
@@ -93,7 +93,7 @@ body {
     100% { opacity: 1; }
 }
 
-/* Additional typing effects to simulate messages in terminal */
+/* Adjust typing delay for each message in console */
 .console p:nth-child(1) {
     animation-delay: 2s; /* Delay for "Initializing..." */
 }
