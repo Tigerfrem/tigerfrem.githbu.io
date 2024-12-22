@@ -1,107 +1,26 @@
-/* General Styles */
-body {
-    background-color: #000; /* Black background for hacker vibes */
-    color: #0f0; /* Neon green text */
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="welcome-text">Welcome to My world</h1>
 
-/* Container Styles */
-.container {
-    text-align: center;
-}
+        <!-- Console Text Messages Below -->
+        <div class="console">
+            <p>Initializing...</p>
+            <p>Loading resources...</p>
+            <p>Ready to hack the world!</p>
+        </div>
+        
+        <!-- Button (appears after all messages) -->
+        <button class="neon-button">Click Me</button>
+    </div>
 
-/* Typing Animation for Welcome Text */
-#welcome-text {
-    font-size: 2rem;
-    border-right: 2px solid #0f0;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 2s steps(30, end), blink 0.5s step-end infinite alternate;
-}
-
-/* Typing effect for #welcome-text (faster speed) */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 20ch; } /* Adjust width based on text length */
-}
-
-/* Blinking effect for #welcome-text */
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* Console Text Styling */
-.console {
-    font-size: 1rem;
-    text-align: left;
-    margin-top: 20px;
-    padding: 0;
-    width: auto;
-    height: auto;
-}
-
-/* Console Text Typing Animation */
-.console p {
-    margin: 5px 0;
-    display: inline;
-    opacity: 0;
-    animation: fadeIn 2s forwards, disappear 2s 4s forwards;
-}
-
-/* Fade-in effect for console text */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Disappear effect for console text */
-@keyframes disappear {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-/* Neon Button Styles */
-.neon-button {
-    background: transparent;
-    border: 2px solid #0f0;
-    color: #0f0;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    opacity: 0;
-    animation: fadeInButton 2s 12s forwards;
-}
-
-.neon-button:hover {
-    background-color: #0f0;
-    color: #000;
-    box-shadow: 0 0 15px #0f0, 0 0 30px #0f0;
-}
-
-/* Fade-in animation for the button */
-@keyframes fadeInButton {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Additional typing effects to simulate messages in terminal */
-.console p:nth-child(1) {
-    animation-delay: 2s; /* Delay for "Initializing..." */
-}
-
-.console p:nth-child(2) {
-    animation-delay: 6s; /* Delay for "Loading resources..." */
-}
-
-.console p:nth-child(3) {
-    animation-delay: 10s; /* Delay for "Ready to hack the world!" */
-}
+    <script src="script.js"></script>
+</body>
+</html>
