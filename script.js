@@ -14,7 +14,6 @@ let charIndex = 0;
 let typingSpeed = 100;  // Speed of typing effect (ms)
 let messageTimeout = 2000; // Delay between messages (ms)
 
-// Function to type each message character by character
 function typeMessage() {
     if (messageIndex === 0) {
         // Handle typing the "Welcome to my world" message first
@@ -30,13 +29,11 @@ function typeMessage() {
             setTimeout(typeMessage, messageTimeout); // Wait before typing the next message
         }
     } else if (messageIndex < messages.length) {
-        // Clear previous content before typing a new message
+        // Add each message below the previous one, keeping the console growing
         let message = messages[messageIndex];
-        consoleElement.textContent = "";  // Clear previous message
-
-        // Typing the next message in the console
+        
         if (charIndex < message.length) {
-            consoleElement.textContent = message.slice(0, charIndex + 1);  // Update console text
+            consoleElement.innerHTML += message.charAt(charIndex);  // Append each character to the console
             charIndex++;
             setTimeout(typeMessage, typingSpeed);
         } else {
