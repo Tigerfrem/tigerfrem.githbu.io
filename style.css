@@ -54,3 +54,20 @@ body {
 .console p {
     margin: 5px 0;
 }
+
+.neon-button {
+    background: transparent;
+    border: 2px solid #0f0;
+    color: #0f0;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.neon-button:hover {
+    background-color: #0f0;
+    color: #000;
+    box-shadow: 0 0 15px #0f0, 0 0 30px #0f0;
+}
+
