@@ -11,7 +11,7 @@ const welcomeText = document.getElementById("welcome-text");
 
 let messageIndex = 0;
 let charIndex = 0;
-let typingSpeed = 95;  // Speed of typing effect (ms)
+let typingSpeed = 100;  // Speed of typing effect (ms)
 let messageTimeout = 2000; // Delay between messages (ms)
 
 // Function to type each message character by character
@@ -30,14 +30,13 @@ function typeMessage() {
             setTimeout(typeMessage, messageTimeout); // Wait before typing the next message
         }
     } else if (messageIndex < messages.length) {
-        // Handle typing the console messages one by one
+        // Clear previous content before typing a new message
         let message = messages[messageIndex];
-        let typedText = message.slice(0, charIndex);
+        consoleElement.textContent = "";  // Clear previous message
 
-        // Clear the previous message to avoid overwriting
-        consoleElement.textContent = typedText;
-
+        // Typing the next message in the console
         if (charIndex < message.length) {
+            consoleElement.textContent = message.slice(0, charIndex + 1);  // Update console text
             charIndex++;
             setTimeout(typeMessage, typingSpeed);
         } else {
