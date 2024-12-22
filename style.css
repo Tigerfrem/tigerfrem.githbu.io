@@ -50,9 +50,23 @@ body {
     overflow-y: auto;
 }
 
-/* Console Text */
+/* Console Text Typing and Vanishing Effect */
 .console p {
     margin: 5px 0;
+    opacity: 0;
+    animation: typing 3s steps(30, end) forwards, fadeOut 1s ease-in 3s forwards;
+}
+
+/* Typing effect for console text */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; } /* Full width of the text */
+}
+
+/* Fade out effect for console text */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .neon-button {
