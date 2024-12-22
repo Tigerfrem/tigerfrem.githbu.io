@@ -1,0 +1,56 @@
+/* General Styles */
+body {
+    background-color: #000; /* Black background for hacker vibes */
+    color: #0f0; /* Neon green text */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    text-align: center;
+}
+
+/* Typing Animation for Welcome Text */
+#welcome-text {
+    font-size: 2rem;
+    border-right: 2px solid #0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 20ch; } /* Adjust width based on text length */
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Console Style */
+.console {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #0f0;
+    box-shadow: 0 0 10px #0f0;
+    font-size: 1rem;
+    text-align: left;
+    width: 80%;
+    max-width: 600px;
+    height: 200px;
+    overflow-y: auto;
+}
+
+/* Console Text */
+.console p {
+    margin: 5px 0;
+}
