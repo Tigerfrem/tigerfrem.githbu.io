@@ -46,26 +46,7 @@ body {
     padding: 0;
     width: auto;
     height: auto;
-}
-
-/* Console Text Typing Animation */
-.console p {
-    margin: 5px 0;
-    display: inline;
-    opacity: 0;
-    animation: typingWord 2s steps(10, end) forwards, fadeOut 2s 4s forwards;
-}
-
-/* Typing effect for each word in console text */
-@keyframes typingWord {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Disappear effect for console text */
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+    min-height: 50px; /* To ensure space for typing animation */
 }
 
 /* Neon Button Styles */
@@ -91,17 +72,4 @@ body {
 @keyframes fadeInButton {
     0% { opacity: 0; }
     100% { opacity: 1; }
-}
-
-/* Adjust typing delay for each message in console */
-.console p:nth-child(1) {
-    animation-delay: 2s; /* Delay for "Initializing..." */
-}
-
-.console p:nth-child(2) {
-    animation-delay: 6s; /* Delay for "Loading resources..." */
-}
-
-.console p:nth-child(3) {
-    animation-delay: 10s; /* Delay for "Ready to hack the world!" */
 }
