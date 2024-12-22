@@ -11,7 +11,7 @@ const welcomeText = document.getElementById("welcome-text");
 
 let messageIndex = 0;
 let charIndex = 0;
-let typingSpeed = 100;  // Speed of typing effect (ms)
+let typingSpeed = 95;  // Speed of typing effect (ms)
 let messageTimeout = 2000; // Delay between messages (ms)
 
 // Function to type each message character by character
