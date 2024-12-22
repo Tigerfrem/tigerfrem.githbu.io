@@ -34,6 +34,7 @@ function typeMessage() {
         let message = messages[messageIndex];
         let typedText = message.slice(0, charIndex);
 
+        // Clear the previous message to avoid overwriting
         consoleElement.textContent = typedText;
 
         if (charIndex < message.length) {
